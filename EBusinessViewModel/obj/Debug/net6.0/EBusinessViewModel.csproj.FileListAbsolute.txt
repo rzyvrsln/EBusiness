@@ -1,0 +1,12 @@
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\bin\Debug\net6.0\EBusinessViewModel.deps.json
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\bin\Debug\net6.0\EBusinessViewModel.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\bin\Debug\net6.0\EBusinessViewModel.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.AssemblyInfo.cs
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\refint\EBusinessViewModel.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\ref\EBusinessViewModel.dll

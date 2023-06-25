@@ -1,0 +1,12 @@
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessService.deps.json
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessService.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessService.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.AssemblyInfo.cs
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\refint\EBusinessService.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\ref\EBusinessService.dll
