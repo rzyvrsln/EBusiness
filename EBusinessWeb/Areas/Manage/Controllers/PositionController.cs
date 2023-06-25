@@ -17,7 +17,7 @@ namespace EBusinessWeb.Areas.Manage.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await positionService.GetAllPositions());
+            return View(await positionService.GetAllPositionsAsync());
         }
 
         [HttpGet]
@@ -29,6 +29,30 @@ namespace EBusinessWeb.Areas.Manage.Controllers
             if (!ModelState.IsValid) return View();
             await positionService.AddPositionAsync(position);
             return RedirectToAction(nameof(Add));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Remove(int id)
+        {
+            if (!ModelState.IsValid) return View();
+            await positionService.RemovePositionAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (!ModelState.IsValid) return View();
+            return View(await positionService.EditPositionAsync(id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, Position position)
+        {
+            if (!ModelState.IsValid) return View();
+            await positionService.EditPositionPostAsync(id, position);
+            return RedirectToAction(nameof(Index));
+
         }
     }
 }

@@ -19,9 +19,43 @@ namespace EBusinessService.Services.Concretes
             await unitOfWork.SaveChangeAsync();
         }
 
-        public async Task<ICollection<Position>> GetAllPositions()
+
+        public async Task<ICollection<Position>> GetAllPositionsAsync()
         {
             return await unitOfWork.GetRepository<Position>().GetAllAsync();
+        }
+
+        public async Task RemovePositionAsync(int id)
+        {
+            var positionId = await unitOfWork.GetRepository<Position>().GetByIdAsync(id);
+            if (positionId != null)
+            {
+                await unitOfWork.GetRepository<Position>().DeleteAsync(positionId);
+                await unitOfWork.SaveChangeAsync();
+            }
+        }
+
+        public async Task<Position> EditPositionAsync(int id)
+        {
+            var positionId = await unitOfWork.GetRepository<Position>().GetByIdAsync(id);
+            if (positionId != null)
+            {
+                return positionId;
+            }
+            return positionId;
+        }
+
+        public async Task EditPositionPostAsync(int id, Position position)
+        {
+            var positionId = await unitOfWork.GetRepository<Position>().GetByIdAsync(id);
+            if (positionId != null)
+            {
+                positionId.Name = position.Name;
+                positionId.UpdateAt = DateTime.Now;
+
+                await unitOfWork.GetRepository<Position>().UpdatedAsync(positionId);
+                await unitOfWork.SaveChangeAsync();
+            }
         }
     }
 }
