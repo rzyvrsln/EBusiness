@@ -22,6 +22,11 @@ namespace EBusinessWeb
             app.UseAuthorization();
 
             app.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
+                app.MapControllerRoute(
                 name: "default",
                 pattern: "{Controller=Home}/{Action=Index}/{Id?}"
                 );

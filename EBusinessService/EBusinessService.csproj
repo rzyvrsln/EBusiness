@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\EBusinessData\EBusinessData.csproj" />
+    <ProjectReference Include="..\EBusinessEntity\EBusinessEntity.csproj" />
   </ItemGroup>
 
 </Project>

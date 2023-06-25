@@ -16,6 +16,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\PC\Desktop\EBusiness\EBusinessWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/PC/Desktop/EBusiness/EBusinessWeb/Areas/Manage/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/EBusiness/EBusinessWeb/Areas/Manage/Views/Position/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFBvc2l0aW9uXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/EBusiness/EBusinessWeb/Areas/Manage/Views/Position/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFBvc2l0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/EBusiness/EBusinessWeb/Areas/Manage/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/EBusiness/EBusinessWeb/Areas/Manage/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/EBusiness/EBusinessWeb/Areas/Manage/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/PC/Desktop/EBusiness/EBusinessWeb/Views/BlogDetail/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ0RldGFpbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

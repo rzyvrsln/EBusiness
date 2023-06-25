@@ -17,5 +17,9 @@ namespace EBusinessData.UnitOfWorks
             return new Repository<T>(dbContext);
         }
 
+        public async Task SaveChangeAsync()
+        {
+            await dbContext.SaveChangesAsync();
+        }
     }
 }

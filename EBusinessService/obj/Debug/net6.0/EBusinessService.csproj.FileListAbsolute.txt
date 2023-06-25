@@ -10,3 +10,10 @@ C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService
 C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\refint\EBusinessService.dll
 C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.pdb
 C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\ref\EBusinessService.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EbusinessCore.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessData.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessEntity.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessData.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessEntity.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EbusinessCore.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.csproj.CopyComplete

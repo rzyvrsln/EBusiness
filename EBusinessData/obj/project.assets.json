@@ -819,6 +819,29 @@
             "rid": "win"
           }
         }
+      },
+      "EbusinessCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EbusinessCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EbusinessCore.dll": {}
+        }
+      },
+      "EBusinessEntity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EbusinessCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EBusinessEntity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EBusinessEntity.dll": {}
+        }
       }
     }
   },
@@ -2075,10 +2098,21 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "EbusinessCore/1.0.0": {
+      "type": "project",
+      "path": "../EbusinessCore/EbusinessCore.csproj",
+      "msbuildProject": "../EbusinessCore/EbusinessCore.csproj"
+    },
+    "EBusinessEntity/1.0.0": {
+      "type": "project",
+      "path": "../EBusinessEntity/EBusinessEntity.csproj",
+      "msbuildProject": "../EBusinessEntity/EBusinessEntity.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "EBusinessEntity >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.12",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.12"
     ]
@@ -2109,7 +2143,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessEntity\\EBusinessEntity.csproj": {
+              "projectPath": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessEntity\\EBusinessEntity.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

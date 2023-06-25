@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "EBusinessEntity/1.0.0": {
+        "dependencies": {
+          "EbusinessCore": "1.0.0"
+        },
         "runtime": {
           "EBusinessEntity.dll": {}
+        }
+      },
+      "EbusinessCore/1.0.0": {
+        "runtime": {
+          "EbusinessCore.dll": {}
         }
       }
     }
   },
   "libraries": {
     "EBusinessEntity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EbusinessCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

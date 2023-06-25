@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using EBusinessService.Services.Abstraction;
+using EBusinessService.Services.Concretes;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EBusinessService.Extensions
 {
@@ -6,7 +8,7 @@ namespace EBusinessService.Extensions
     {
         public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection service)
         {
-            //service.AddScoped<ICategoryService, CategoryService>();
+            service.AddScoped<IPositionService, PositionService>();
             return service;
         }
     }
