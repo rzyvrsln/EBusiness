@@ -1,5 +1,7 @@
-﻿<!-- End Header -->
+﻿@using EBusinessEntity.Entities;
+<!-- End Header -->
 <!-- ======= hero Section ======= -->
+@model ICollection<Employee>
 <section id="hero">
     <div class="hero-container">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
@@ -237,26 +239,29 @@
                 </div>
             </div>
             <div class="row">
+                @foreach(var employees in Model.Take(4).OrderByDescending(e => e.Id))
+                {
+
                 <div class="col-md-3 col-sm-3 col-xs-12">
                     <div class="single-team-member">
                         <div class="team-img">
                             <a href="#">
-                                <img src="~/assets/img/team/1.jpg" alt="">
+                                <img src="~/assets/img/employee/@employees.ImageUrl" alt="">
                             </a>
                             <div class="team-social-icon text-center">
                                 <ul>
                                     <li>
-                                        <a href="#">
-                                            <i class="bi bi-facebook"></i>
+                                            <a href="@employees.Linkedin">
+                                            <i class="bi bi-linkedin"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                            <a href="@employees.Twitter">
                                             <i class="bi bi-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                            <a href="@employees.Instagram">
                                             <i class="bi bi-instagram"></i>
                                         </a>
                                     </li>
@@ -264,110 +269,14 @@
                             </div>
                         </div>
                         <div class="team-content text-center">
-                            <h4>Jhon Mickel</h4>
-                            <p>Seo</p>
+                            <h4>@employees.Name @employees.Surname</h4>
+                            <p>@employees.Position.Name</p>
                         </div>
                     </div>
                 </div>
-                <!-- End column -->
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="single-team-member">
-                        <div class="team-img">
-                            <a href="#">
-                                <img src="~/assets/img/team/2.jpg" alt="">
-                            </a>
-                            <div class="team-social-icon text-center">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content text-center">
-                            <h4>Andrew Arnold</h4>
-                            <p>Web Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End column -->
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="single-team-member">
-                        <div class="team-img">
-                            <a href="#">
-                                <img src="~/assets/img/team/3.jpg" alt="">
-                            </a>
-                            <div class="team-social-icon text-center">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content text-center">
-                            <h4>Lellien Linda</h4>
-                            <p>Web Design</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End column -->
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="single-team-member">
-                        <div class="team-img">
-                            <a href="#">
-                                <img src="~/assets/img/team/4.jpg" alt="">
-                            </a>
-                            <div class="team-social-icon text-center">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="bi bi-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content text-center">
-                            <h4>Jhon Powel</h4>
-                            <p>Seo Expert</p>
-                        </div>
-                    </div>
-                </div>
+
+                }
+
                 <!-- End column -->
             </div>
         </div>

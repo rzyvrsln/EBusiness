@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BRARxXLHpDJHJtX43WQUAQVu+pR+gAO2Ke7QatOkkYM=",
+  "Hash": "0KflJOze1L4RHl//h91vjrhj2agfCbHcAh0TOMogUsQ=",
   "Source": "EBusinessWeb",
   "BasePath": "_content/EBusinessWeb",
   "Mode": "Default",
@@ -355,6 +355,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\abed6f22-a41a-426c-a6b7-535a27c711a6Screenshot (9).png"
+    },
+    {
+      "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\b9eecc7a-62e7-47cc-b90d-0bb2bec5c49bScreenshot (8).png",
+      "SourceId": "EBusinessWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\",
+      "BasePath": "_content/EBusinessWeb",
+      "RelativePath": "assets/img/employee/b9eecc7a-62e7-47cc-b90d-0bb2bec5c49bScreenshot (8).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\b9eecc7a-62e7-47cc-b90d-0bb2bec5c49bScreenshot (8).png"
     },
     {
       "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\favicon.png",
