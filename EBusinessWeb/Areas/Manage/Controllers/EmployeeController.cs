@@ -4,6 +4,7 @@ using EBusinessService.Services.Abstraction;
 using EBusinessViewModel.Entities.Employee;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace EBusinessWeb.Areas.Manage.Controllers
 {
@@ -39,10 +40,39 @@ namespace EBusinessWeb.Areas.Manage.Controllers
             if (!ModelState.IsValid)
             {
                 ViewBag.Positions = new SelectList(context.Positions, nameof(Position.Id), nameof(Position.Name));
-                return View();
+                return View(nameof(Add));
             }
             await employeeService.AddEmployeeAsync(employeeVM);
-            return View();
+            return RedirectToAction(nameof(Add));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Remove(int id)
+        {
+            if(!ModelState.IsValid) BadRequest();
+            await employeeService.RemoveEmployeeAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+            ViewBag.Positions = new SelectList(context.Positions, nameof(Position.Id), nameof(Position.Name));
+            return View(await employeeService.EditEmployeeAsync(id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, UpdateEmployeeVM employeeVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Positions = new SelectList(context.Positions, nameof(Position.Id), nameof(Position.Name));
+                return View();
+            }
+
+            await employeeService.EditPostEmployeeAsync(id, employeeVM);
+            return RedirectToAction(nameof(Index));
         }
 
     }

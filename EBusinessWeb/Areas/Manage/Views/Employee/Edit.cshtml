@@ -1,0 +1,77 @@
+﻿@using EBusinessViewModel.Entities.Employee;
+<!-- End Header -->
+<!-- ======= Sidebar ======= -->
+@model UpdateEmployeeVM
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Manage" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Employee</li>
+                <li class="breadcrumb-item active">Update</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+
+            <div class="col-lg-6 container">
+
+
+                <div class="card container">
+                    <div class="card-body">
+                        <h5 class="card-title">Update employee</h5>
+
+                        <!-- No Labels Form -->
+                        <form class="row g-3" method="post" enctype="multipart/form-data">
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Name" class="form-control" placeholder="Name">
+                                <span asp-validation-for="Name" style="color:red;"></span>
+                            </div>
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Surname" class="form-control" placeholder="Surname">
+                                <span asp-validation-for="Surname" style="color:red;"></span>
+                            </div>
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Linkedin" class="form-control" placeholder="Linkedin">
+                                <span asp-validation-for="Linkedin" style="color:red;"></span>
+                            </div>
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Instagram" class="form-control" placeholder="Instagram">
+                                <span asp-validation-for="Instagram" style="color:red;"></span>
+                            </div>
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Twitter" class="form-control" placeholder="Twitter">
+                                <span asp-validation-for="Twitter" style="color:red;"></span>
+                            </div>
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Image" class="form-control">
+                                <span asp-validation-for="Image" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-8">
+                                <label for="inputState" class="form-label">Position</label>
+                                <select asp-for="PositionId" id="inputState" class="form-select" asp-items="@ViewBag.Positions">
+                                    <option disabled selected>Choose...</option>
+                                </select>
+                                <span asp-validation-for="PositionId" style="color:red;"></span>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                                <a asp-area="Manage" asp-controller="Employee" asp-action="Index" class="btn btn-warning">Cancel</a>
+                            </div>
+                        </form><!-- End No Labels Form -->
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->

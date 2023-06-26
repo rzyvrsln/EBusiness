@@ -1,5 +1,6 @@
 ﻿using EBusinessData.DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace EBusinessData.Repositories

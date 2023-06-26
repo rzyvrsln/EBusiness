@@ -7,7 +7,7 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a asp-area="Manage" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li class="breadcrumb-item">Positions</li>
+                <li class="breadcrumb-item">Employee</li>
                 <li class="breadcrumb-item active">See</li>
             </ol>
         </nav>
@@ -19,14 +19,16 @@
 
                 <div class="card container">
                     <div class="card-body">
-                        <h5 class="card-title">Positions</h5>
+                        <h5 class="card-title">Employees</h5>
                         <!-- Active Table -->
                         <table class="table table-borderless">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Surname</th>
+                                    <th scope="col">Position</th>
                                     <th scope="col">Linkedin</th>
                                     <th scope="col">Instagram</th>
                                     <th scope="col">Twitter</th>
@@ -40,15 +42,17 @@
                                 {
                                     <tr>
                                         <th scope="row">@employees.Id</th>
+                                        <th scope="row"><img style="width:70px;" src="~/assets/img/employee/@employees.ImageUrl" /></th>
                                         <td>@employees.Name</td>
                                         <td>@employees.Surname</td>
+                                        <td>@employees.Position.Name</td>
                                         <td>@employees.Linkedin</td>
                                         <td>@employees.Instagram</td>
                                         <td>@employees.Twitter</td>
                                         <td>@employees.CreateAt.Day/@employees.CreateAt.Month/@employees.CreateAt.Year</td>
                                         <td>@employees.UpdateAt</td>
-                                        <td><a asp-area="Manage" asp-controller="Position" asp-action="Remove" asp-route-Id="@employees.Id" class="btn btn-danger" title="Remove"><i class="bi bi-trash"></i></a></td>
-                                        <td><a asp-area="Manage" asp-controller="Position" asp-action="Edit" asp-route-Id="@employees.Id" class="btn btn-warning" title="Edit"><i class="bx bxs-edit"></i></a></td>
+                                        <td><a asp-area="Manage" asp-controller="Employee" asp-action="Remove" asp-route-Id="@employees.Id" class="btn btn-danger" title="Remove"><i class="bi bi-trash"></i></a></td>
+                                        <td><a asp-area="Manage" asp-controller="Employee" asp-action="Edit" asp-route-Id="@employees.Id" class="btn btn-warning" title="Edit"><i class="bx bxs-edit"></i></a></td>
                                     </tr>
                                 }
                             </tbody>

@@ -7,6 +7,8 @@ namespace EBusinessService.Services.Abstraction
     {
         Task AddEmployeeAsync(AddEmployeeVM employeeVM);
         Task<ICollection<Employee>> GetAllEmployeeAsync();
-
+        Task RemoveEmployeeAsync(int id);
+        Task<UpdateEmployeeVM> EditEmployeeAsync(int id);
+        Task EditPostEmployeeAsync(int id, UpdateEmployeeVM employeeVM);
     }
 }
