@@ -1,0 +1,53 @@
+﻿@using EBusinessEntity.Entities;
+
+@model ICollection<Contact>
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Manage" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Contact</li>
+                <li class="breadcrumb-item active">See</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12 container">
+
+                <div class="card container">
+                    <div class="card-body">
+                        <h5 class="card-title">Contacts</h5>
+                        <!-- Active Table -->
+                        <table class="table table-borderless">
+                            <tbody>
+                                @foreach (var contacts in Model ?? new List<Contact>())
+                                {
+                                    <tr>
+                                        <th scope="row">@contacts.Id</th>
+                                        <td><b>Name:</b> @contacts.Name <b>Email:</b> @contacts.Email</td>
+                                        <td><b>Subject:</b> @contacts.Subject</td>
+                                        <td><b>Message:</b> @contacts.Message</td>
+                                        <td>@contacts.CreateAt.Day/@contacts.CreateAt.Month/@contacts.CreateAt.Year</td>
+                                        <td><a asp-area="Manage" asp-controller="Contact" asp-action="Remove" asp-route-Id="@contacts.Id" class="btn btn-danger" title="Remove"><i class="bi bi-trash"></i></a></td>
+                                        <td><a asp-area="Manage" asp-controller="Contact" asp-action="Reply" asp-route-Id="@contacts.Id" class="btn btn-warning" title="Reply"><i class="bi bi-reply"></i></a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Tables without borders -->
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->

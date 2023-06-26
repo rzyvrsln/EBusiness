@@ -10,5 +10,6 @@ namespace EBusinessData.DAL
 
         public DbSet<Position> Positions { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
