@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EBusinessData\EBusinessData.csproj" />
     <ProjectReference Include="..\EBusinessEntity\EBusinessEntity.csproj" />
+    <ProjectReference Include="..\EBusinessViewModel\EBusinessViewModel.csproj" />
   </ItemGroup>
 
 </Project>

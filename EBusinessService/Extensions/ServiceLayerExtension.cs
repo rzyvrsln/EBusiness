@@ -9,6 +9,7 @@ namespace EBusinessService.Extensions
         public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection service)
         {
             service.AddScoped<IPositionService, PositionService>();
+            service.AddScoped<IEmployeeService, EmployeeService>();
             return service;
         }
     }

@@ -1,0 +1,69 @@
+﻿@using EBusinessEntity.Entities;
+
+@model ICollection<Employee>
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Manage" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Positions</li>
+                <li class="breadcrumb-item active">See</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12 container">
+
+                <div class="card container">
+                    <div class="card-body">
+                        <h5 class="card-title">Positions</h5>
+                        <!-- Active Table -->
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Surname</th>
+                                    <th scope="col">Linkedin</th>
+                                    <th scope="col">Instagram</th>
+                                    <th scope="col">Twitter</th>
+                                    <th scope="col">Created Date</th>
+                                    <th scope="col">Updated Date</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var employees in Model ?? new List<Employee>())
+                                {
+                                    <tr>
+                                        <th scope="row">@employees.Id</th>
+                                        <td>@employees.Name</td>
+                                        <td>@employees.Surname</td>
+                                        <td>@employees.Linkedin</td>
+                                        <td>@employees.Instagram</td>
+                                        <td>@employees.Twitter</td>
+                                        <td>@employees.CreateAt.Day/@employees.CreateAt.Month/@employees.CreateAt.Year</td>
+                                        <td>@employees.UpdateAt</td>
+                                        <td><a asp-area="Manage" asp-controller="Position" asp-action="Remove" asp-route-Id="@employees.Id" class="btn btn-danger" title="Remove"><i class="bi bi-trash"></i></a></td>
+                                        <td><a asp-area="Manage" asp-controller="Position" asp-action="Edit" asp-route-Id="@employees.Id" class="btn btn-warning" title="Edit"><i class="bx bxs-edit"></i></a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Tables without borders -->
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->

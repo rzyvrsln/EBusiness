@@ -17,3 +17,5 @@ C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessData.pd
 C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessEntity.pdb
 C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EbusinessCore.pdb
 C:\Users\PC\Desktop\EBusiness\EBusinessService\obj\Debug\net6.0\EBusinessService.csproj.CopyComplete
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessViewModel.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessService\bin\Debug\net6.0\EBusinessViewModel.pdb

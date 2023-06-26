@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "jZgAnOATXO8M9w8SM24hZLlAmePr1Kvsdl8T7msFx2YM/N5K9lOGD/FjqbtYnePvOgPf6f/qQ3RU/OkWSNylWg==",
+  "dgSpecHash": "8hlkog+OFtnCINiGT8MvvAEr82WrZjMJ9R8VZgOZdZB6DD498qFC2crh/pS1WOuRURHUTRuR2C8czphYHs1xlg==",
   "success": true,
   "projectFilePath": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessViewModel\\EBusinessViewModel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

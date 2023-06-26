@@ -17,6 +17,11 @@
   <ItemGroup>
     <ProjectReference Include="..\EBusinessData\EBusinessData.csproj" />
     <ProjectReference Include="..\EBusinessService\EBusinessService.csproj" />
+    <ProjectReference Include="..\EBusinessViewModel\EBusinessViewModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\img\employee\" />
   </ItemGroup>
 
 </Project>
