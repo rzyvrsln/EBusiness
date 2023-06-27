@@ -25,10 +25,10 @@ namespace EBusinessWeb.Areas.Manage.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //[HttpGet]
-        //public Task<IActionResult> Reply(int id)
-        //{
-
-        //}
+        [HttpGet]
+        public async Task<IActionResult> Reply(int id)
+        {
+            return View(await contactService.GetContactByIdAsync(id));
+        }
     }
 }

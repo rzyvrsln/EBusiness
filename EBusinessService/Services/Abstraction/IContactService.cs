@@ -7,6 +7,6 @@ namespace EBusinessService.Services.Abstraction
         Task AddContactAsync(Contact contact);
         Task<ICollection<Contact>> GetAllContactsAsync();
         Task RemoveContactAsync(int id);
-        //Task<Contact> GetContactByIdAsync(int id);
+        Task<Contact> GetContactByIdAsync(int id);
     }
 }

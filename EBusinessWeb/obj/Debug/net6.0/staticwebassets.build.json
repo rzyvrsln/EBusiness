@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0KflJOze1L4RHl//h91vjrhj2agfCbHcAh0TOMogUsQ=",
+  "Hash": "mL6/5vGyvtidMmINPSwjI/TA4Veynsox5/hhAX/MmMM=",
   "Source": "EBusinessWeb",
   "BasePath": "_content/EBusinessWeb",
   "Mode": "Default",
@@ -323,6 +323,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\2cc67fcc-6aa3-4224-9e8c-3457486c9b4eScreenshot (1).png"
     },
     {
+      "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\76ccdd79-98ac-46a4-8eff-555d7a097d86eli.jpg",
+      "SourceId": "EBusinessWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\",
+      "BasePath": "_content/EBusinessWeb",
+      "RelativePath": "assets/img/employee/76ccdd79-98ac-46a4-8eff-555d7a097d86eli.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\76ccdd79-98ac-46a4-8eff-555d7a097d86eli.jpg"
+    },
+    {
       "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\806c3ea7-140d-4715-a62c-04e525dd5b0cScreenshot (8).png",
       "SourceId": "EBusinessWeb",
       "SourceType": "Discovered",
@@ -372,6 +389,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\b9eecc7a-62e7-47cc-b90d-0bb2bec5c49bScreenshot (8).png"
+    },
+    {
+      "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\d7a74859-4e57-465e-a18e-bfb962d60aca100949622_110467794018290_7948899173904941056_n.jpg",
+      "SourceId": "EBusinessWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\",
+      "BasePath": "_content/EBusinessWeb",
+      "RelativePath": "assets/img/employee/d7a74859-4e57-465e-a18e-bfb962d60aca100949622_110467794018290_7948899173904941056_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\d7a74859-4e57-465e-a18e-bfb962d60aca100949622_110467794018290_7948899173904941056_n.jpg"
     },
     {
       "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\favicon.png",

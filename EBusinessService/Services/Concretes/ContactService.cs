@@ -31,9 +31,9 @@ namespace EBusinessService.Services.Concretes
             await unitOfWork.SaveChangeAsync();
         }
 
-        //public async Task<Contact> GetContactByIdAsync(int id)
-        //{
-        //    return await unitOfWork.GetRepository<Contact>().GetByIdAsync(id);
-        //}
+        public async Task<Contact> GetContactByIdAsync(int id)
+        {
+            return await unitOfWork.GetRepository<Contact>().GetByIdAsync(id);
+        }
     }
 }

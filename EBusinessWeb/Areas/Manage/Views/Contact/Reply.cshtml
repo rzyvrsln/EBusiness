@@ -1,0 +1,58 @@
+﻿@using EBusinessEntity.Entities;
+<!-- End Sidebar-->
+@model Contact
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Contact</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Manage" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Contact</li>
+                <li class="breadcrumb-item active">Reply</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section contact">
+
+        <div class="row gy-4">
+
+
+            <div class="col-xl-6 container">
+                <div class="card p-4">
+                    <form class="php-email-form">
+                        <div class="row gy-4">
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" readonly asp-for="Name">
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input type="email" class="form-control" readonly asp-for="Email">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" readonly asp-for="Subject">
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" rows="6" readonly asp-for="Message"></textarea>
+                            </div>
+                            <a class="btn btn-warning" asp-Area="Manage" asp-controller="Contact" asp-action="Index" title="Return"><i class="ri-arrow-go-back-line"></i></a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+    </section>
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
