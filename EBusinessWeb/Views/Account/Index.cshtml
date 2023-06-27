@@ -1,4 +1,5 @@
-﻿
+﻿@using EBusinessViewModel.Entities.Account;
+@model UserSignInVM
 
 <main id="main" class="main" style="margin-top:10%;margin-bottom:5%;">
 
@@ -6,17 +7,19 @@
 
         <div class="row gy-4">
 
-            <div class="col-xl-6 container">
+            <div class="col-xl-4 container">
                 <div class="card p-4">
-                    <form method="post" class="php-email-form">
+                    <form method="post">
                         <div class="row gy-4">
 
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                            <div class="col-md-6 ">
+                                <input asp-for="UserName" class="form-control" placeholder="Username" autocomplete="of" required>
+                                <span asp-validation-for="UserName" style="color:red;"></span>
                             </div>
 
                             <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Surname" required>
+                                <input asp-for="Password" class="form-control" autocomplete="of" required>
+                                <span asp-validation-for="Password" style="color:red;"></span>
                             </div>
 
                             <div class="col-md-12">
@@ -25,7 +28,7 @@
                             </div>
 
                             <div class="col-md-12 text-center">
-                                <button type="submit">Send Message</button>
+                                <button type="submit">Sign in</button>
                             </div>
 
                         </div>

@@ -1,0 +1,60 @@
+﻿@using EBusinessViewModel.Entities.Account;
+@model UserSignUpVM
+
+<main id="main" class="main" style="margin-top:10%;margin-bottom:5%;">
+
+    <section class="section contact">
+
+        <div class="row gy-4">
+
+            <div class="col-xl-6 container">
+                <div class="card p-4">
+                    <form method="post">
+                        <div class="row gy-4">
+
+                            <div class="col-md-6">
+                                <input asp-for="Name" class="form-control" placeholder="Your Name" autocomplete="of" required>
+                                <span asp-validation-for="Name" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input asp-for="Surname" class="form-control" placeholder="Surname" autocomplete="of" required>
+                                <span asp-validation-for="Surname" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input asp-for="UserName" class="form-control" placeholder="Username" autocomplete="of" required>
+                                <span asp-validation-for="UserName" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input asp-for="Email" class="form-control" placeholder="Email" autocomplete="of" required>
+                                <span asp-validation-for="Email" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input asp-for="Password" class="form-control" autocomplete="of" required>
+                                <span asp-validation-for="Password" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input asp-for="ConfirmPassword" class="form-control" autocomplete="of" required>
+                                <span asp-validation-for="ConfirmPassword" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-success" type="submit">Sign up</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
