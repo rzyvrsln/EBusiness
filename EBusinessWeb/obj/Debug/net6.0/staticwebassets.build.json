@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mL6/5vGyvtidMmINPSwjI/TA4Veynsox5/hhAX/MmMM=",
+  "Hash": "10tU51p8WYJLo0IwAZ1vG8VPiI0w7PGR9jwEqJAxPxo=",
   "Source": "EBusinessWeb",
   "BasePath": "_content/EBusinessWeb",
   "Mode": "Default",
@@ -306,6 +306,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\0884c740-4a81-47cb-a3ce-ba8b53d57dddScreenshot (13).png"
     },
     {
+      "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\28fe7ed9-b1e7-4690-b7b2-5557aaa168a5100949622_110467794018290_7948899173904941056_n.jpg",
+      "SourceId": "EBusinessWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\",
+      "BasePath": "_content/EBusinessWeb",
+      "RelativePath": "assets/img/employee/28fe7ed9-b1e7-4690-b7b2-5557aaa168a5100949622_110467794018290_7948899173904941056_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\28fe7ed9-b1e7-4690-b7b2-5557aaa168a5100949622_110467794018290_7948899173904941056_n.jpg"
+    },
+    {
       "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\2cc67fcc-6aa3-4224-9e8c-3457486c9b4eScreenshot (1).png",
       "SourceId": "EBusinessWeb",
       "SourceType": "Discovered",
@@ -372,6 +389,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\abed6f22-a41a-426c-a6b7-535a27c711a6Screenshot (9).png"
+    },
+    {
+      "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\b563b807-81e1-4fcb-a1b2-08f263b25da1eli.jpg",
+      "SourceId": "EBusinessWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\",
+      "BasePath": "_content/EBusinessWeb",
+      "RelativePath": "assets/img/employee/b563b807-81e1-4fcb-a1b2-08f263b25da1eli.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\employee\\b563b807-81e1-4fcb-a1b2-08f263b25da1eli.jpg"
     },
     {
       "Identity": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\b9eecc7a-62e7-47cc-b90d-0bb2bec5c49bScreenshot (8).png",
