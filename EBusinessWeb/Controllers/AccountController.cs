@@ -1,7 +1,9 @@
 ﻿using EBusinessEntity.Entities;
 using EBusinessViewModel.Entities.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace EBusinessWeb.Controllers
 {
@@ -17,6 +19,9 @@ namespace EBusinessWeb.Controllers
             this.signInManager = signInManager;
             this.roleManager = roleManager;
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Login() => RedirectToAction(nameof(AdminSignIn));
 
         [HttpGet]
         public async Task<IActionResult> SignUp() => View();
@@ -62,10 +67,20 @@ namespace EBusinessWeb.Controllers
         public async Task<IActionResult> Index(UserSignInVM signInVM)
         {
             if (!ModelState.IsValid) return View();
+
             var user = await userManager.FindByNameAsync(signInVM.UserName);
-            if(user is null)
+
+            var roles = await userManager.GetRolesAsync(user);
+
+            if (user is null)
             {
                 ModelState.AddModelError("UserName", "This username not exist.");
+                return View();
+            }
+
+            if (roles[0] == "Admin")
+            {
+                ModelState.AddModelError("UserName", "This username already usin for Admin.");
                 return View();
             }
 
@@ -84,6 +99,30 @@ namespace EBusinessWeb.Controllers
         {
             await signInManager.SignOutAsync();
             return RedirectToActionPermanent("Index", "Home");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AdminSignIn() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> AdminSignIn(AdminSignIn adminSign)
+        {
+            if (!ModelState.IsValid) return View();
+            var admin = await userManager.FindByNameAsync(adminSign.UserName);
+            if (admin is null)
+            {
+                ModelState.AddModelError("UserName", "This username not exist.");
+                return View();
+            }
+
+            var result = await signInManager.PasswordSignInAsync(admin, adminSign.Password, adminSign.IsParsistance, true);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Username or Password wrong. Try again.");
+                return View();
+            }
+            ;
+            return RedirectToAction("Index", "Home", new { area = "Manage" });
         }
 
         //[HttpGet]
