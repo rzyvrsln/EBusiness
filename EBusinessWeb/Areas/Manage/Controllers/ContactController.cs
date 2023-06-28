@@ -1,9 +1,11 @@
 ﻿using EBusinessService.Services.Abstraction;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EBusinessWeb.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class ContactController : Controller
     {
         private readonly IContactService contactService;

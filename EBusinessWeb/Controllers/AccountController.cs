@@ -8,14 +8,15 @@ namespace EBusinessWeb.Controllers
     public class AccountController : Controller
     {
         UserManager<AppUser> userManager;
+        SignInManager<AppUser> signInManager;
+        RoleManager<IdentityRole> roleManager;
 
-        public AccountController(UserManager<AppUser> userManager)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             this.userManager = userManager;
+            this.signInManager = signInManager;
+            this.roleManager = roleManager;
         }
-
-        [HttpGet]
-        public async Task<IActionResult> Index() => View();
 
         [HttpGet]
         public async Task<IActionResult> SignUp() => View();
@@ -24,7 +25,7 @@ namespace EBusinessWeb.Controllers
         public async Task<IActionResult> SignUp(UserSignUpVM signUpVM)
         {
             if (!ModelState.IsValid) return View();
-            var user = userManager.FindByEmailAsync(signUpVM.Email);
+            var user = await userManager.FindByEmailAsync(signUpVM.Email);
             if(user != null)
             {
                 ModelState.AddModelError("Email", "This email already exist.");
@@ -49,8 +50,47 @@ namespace EBusinessWeb.Controllers
                     return View();
                 }
             }
-            //await userManager.AddToRoleAsync(user, "Admin");
+
+            await userManager.AddToRoleAsync(user, "User");
             return RedirectToAction("Index", "Account");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Index() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> Index(UserSignInVM signInVM)
+        {
+            if (!ModelState.IsValid) return View();
+            var user = await userManager.FindByNameAsync(signInVM.UserName);
+            if(user is null)
+            {
+                ModelState.AddModelError("UserName", "This username not exist.");
+                return View();
+            }
+
+            var result = await signInManager.PasswordSignInAsync(user, signInVM.Password, signInVM.IsParsistance,true);
+            if(!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Username or Password wrong. Try again.");
+                return View();
+            }
+
+            return RedirectToActionPermanent("Index","Home");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SignOut()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToActionPermanent("Index", "Home");
+        }
+
+        //[HttpGet]
+        //public async Task<IActionResult> AddRoles()
+        //{
+        //    await roleManager.CreateAsync(new IdentityRole { Name = "User" });
+        //    return View();
+        //}
     }
 }

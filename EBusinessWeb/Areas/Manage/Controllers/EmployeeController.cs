@@ -2,6 +2,7 @@
 using EBusinessEntity.Entities;
 using EBusinessService.Services.Abstraction;
 using EBusinessViewModel.Entities.Employee;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EBusinessWeb.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService employeeService;
