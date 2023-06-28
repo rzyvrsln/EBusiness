@@ -21,6 +21,7 @@ namespace EBusinessWeb.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> AccessDenied() => RedirectToAction(nameof(AdminSignIn));
         public async Task<IActionResult> Login() => RedirectToAction(nameof(AdminSignIn));
 
         [HttpGet]
@@ -34,16 +35,18 @@ namespace EBusinessWeb.Controllers
 
             if (user != null)
             {
+                var roles = await userManager.GetRolesAsync(user);
+
+                if (roles[0] == "Admin")
+                {
+                    ModelState.AddModelError("UserName", "This username already usin for Admin.");
+                    return View();
+                }
+
                 ModelState.AddModelError("Email", "This email already exist.");
                 return View();
             }
-            var roles = await userManager.GetRolesAsync(user);
-
-            if (roles[0] == "Admin")
-            {
-                ModelState.AddModelError("UserName", "This username already usin for Admin.");
-                return View();
-            }
+            
 
             AppUser appUser = new AppUser
             {
@@ -64,7 +67,7 @@ namespace EBusinessWeb.Controllers
                 }
             }
 
-            await userManager.AddToRoleAsync(user, "User");
+            await userManager.AddToRoleAsync(appUser, "User");
             return RedirectToAction("Index", "Account");
         }
 
@@ -85,8 +88,6 @@ namespace EBusinessWeb.Controllers
                 return View();
             }
             var roles = await userManager.GetRolesAsync(user);
-
-
             if (roles[0] == "Admin")
             {
                 ModelState.AddModelError("UserName", "This username already usin for Admin.");

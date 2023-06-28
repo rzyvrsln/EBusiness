@@ -1,0 +1,48 @@
+﻿@using EBusinessEntity.Entities;
+<!-- End Header -->
+<!-- ======= Sidebar ======= -->
+@model Blog
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Manage" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Blog</li>
+                <li class="breadcrumb-item active">Update</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+
+            <div class="col-lg-6 container">
+
+
+                <div class="card container">
+                    <div class="card-body">
+                        <h5 class="card-title">Update blog</h5>
+
+                        <!-- No Labels Form -->
+                        <form class="row g-3" method="post">
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Name" class="form-control" placeholder="write something..">
+                                <span asp-validation-for="Name" style="color:red;"></span>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                                <a asp-area="Manage" asp-controller="Blog" asp-action="Index" asp class="btn btn-warning">Cancel</a>
+                            </div>
+                        </form><!-- End No Labels Form -->
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->

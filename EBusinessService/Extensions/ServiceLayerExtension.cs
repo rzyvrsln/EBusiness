@@ -14,6 +14,9 @@ namespace EBusinessService.Extensions
             service.AddScoped<IPositionService, PositionService>();
             service.AddScoped<IEmployeeService, EmployeeService>();
             service.AddScoped<IContactService, ContactService>();
+            service.AddScoped<IBlogService, BlogService>();
+            service.AddScoped<IPostService, PostService>();
+
             service.AddIdentity<AppUser, IdentityRole>(option =>
             {
                 option.Password.RequireLowercase = true;

@@ -1,0 +1,67 @@
+﻿@using EBusinessViewModel.Entities.Post;
+<!-- End Header -->
+<!-- ======= Sidebar ======= -->
+@model AddPostVM
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Manage" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Post</li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+
+            <div class="col-lg-6 container">
+
+
+                <div class="card container">
+                    <div class="card-body">
+                        <h5 class="card-title">Add post</h5>
+
+                        <!-- No Labels Form -->
+                        <form class="row g-3" method="post" enctype="multipart/form-data">
+                           
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Title" class="form-control" placeholder="Title">
+                                <span asp-validation-for="Title" style="color:red;"></span>
+                            </div>
+                            
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Image" class="form-control">
+                                <span asp-validation-for="Image" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-12" style="text-align:center;">
+                                <input asp-for="Description" class="form-control" placeholder="Description">
+                                <span asp-validation-for="Description" style="color:red;"></span>
+                            </div>
+
+                            <div class="col-md-8">
+                                <label for="inputState" class="form-label">Blog</label>
+                                <select asp-for="BlogId" id="inputState" class="form-select" asp-items="@ViewBag.Blogs">
+                                    <option disabled selected>Choose...</option>
+                                </select>
+                                <span asp-validation-for="BlogId" style="color:red;"></span>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </div>
+                        </form><!-- End No Labels Form -->
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->

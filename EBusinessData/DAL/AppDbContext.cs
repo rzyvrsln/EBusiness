@@ -11,6 +11,8 @@ namespace EBusinessData.DAL
         public DbSet<Position> Positions { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Post> Posts { get; set; }
         public DbSet<AppUser> Users { get; set; }
     }
 }

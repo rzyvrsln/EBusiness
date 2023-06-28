@@ -6,5 +6,7 @@ namespace EBusinessWeb.Controllers
     {
         [HttpGet]
         public async Task<IActionResult> Index() => View();
+        [HttpGet]
+        public async Task<IActionResult> BlogDetail() => View();
     }
 }

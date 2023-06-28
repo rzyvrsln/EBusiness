@@ -1,0 +1,58 @@
+﻿@using EBusinessEntity.Entities;
+
+@model ICollection<Post>
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Manage" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Post</li>
+                <li class="breadcrumb-item active">See</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12 container">
+
+                <div class="card container">
+                    <div class="card-body">
+                        <h5 class="card-title">Posts</h5>
+                        <!-- Active Table -->
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var posts in Model ?? new List<Post>())
+                                {
+                                    <tr>
+                                        <th scope="row">@posts.Id</th>
+                                        <th scope="row"><img style="width:70px;" src="~/assets/img/employee/@posts.ImageUrl" /></th>
+                                        <td>@posts.CreateAt.Day/@posts.CreateAt.Month/@posts.CreateAt.Year</td>
+                                        <td>@posts.UpdateAt</td>
+                                        <td><a asp-area="Manage" asp-controller="Post" asp-action="Remove" asp-route-Id="@posts.Id" class="btn btn-danger" title="Remove"><i class="bi bi-trash"></i></a></td>
+                                        <td><a asp-area="Manage" asp-controller="Post" asp-action="Edit" asp-route-Id="@posts.Id" class="btn btn-warning" title="Edit"><i class="bx bxs-edit"></i></a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Tables without borders -->
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
