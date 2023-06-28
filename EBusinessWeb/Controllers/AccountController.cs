@@ -31,9 +31,17 @@ namespace EBusinessWeb.Controllers
         {
             if (!ModelState.IsValid) return View();
             var user = await userManager.FindByEmailAsync(signUpVM.Email);
-            if(user != null)
+
+            if (user != null)
             {
                 ModelState.AddModelError("Email", "This email already exist.");
+                return View();
+            }
+            var roles = await userManager.GetRolesAsync(user);
+
+            if (roles[0] == "Admin")
+            {
+                ModelState.AddModelError("UserName", "This username already usin for Admin.");
                 return View();
             }
 
@@ -70,13 +78,14 @@ namespace EBusinessWeb.Controllers
 
             var user = await userManager.FindByNameAsync(signInVM.UserName);
 
-            var roles = await userManager.GetRolesAsync(user);
 
             if (user is null)
             {
                 ModelState.AddModelError("UserName", "This username not exist.");
                 return View();
             }
+            var roles = await userManager.GetRolesAsync(user);
+
 
             if (roles[0] == "Admin")
             {
