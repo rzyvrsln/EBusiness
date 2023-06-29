@@ -56,6 +56,8 @@ namespace EBusinessService.Services.Concretes
         {
             var employeeId = await unitOfWork.GetRepository<Employee>().GetByIdAsync(id);
             await unitOfWork.GetRepository<Employee>().DeleteAsync(employeeId);
+            string filePath = Path.Combine(environment.WebRootPath, "assets", "img", "employee", employeeId.ImageUrl);
+            File.Delete(filePath);
             await unitOfWork.SaveChangeAsync();
         }
 

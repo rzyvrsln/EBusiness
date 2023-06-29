@@ -25,6 +25,11 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Blog</th>
+                                    <th scope="col">Created</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -33,7 +38,10 @@
                                 {
                                     <tr>
                                         <th scope="row">@posts.Id</th>
-                                        <th scope="row"><img style="width:70px;" src="~/assets/img/employee/@posts.ImageUrl" /></th>
+                                        <th scope="row">@posts.Title</th>
+                                        <th scope="row">@posts.Description</th>
+                                        <th scope="row"><img style="width:70px;" src="~/assets/img/post/@posts.ImageUrl" /></th>
+                                        <th scope="row">@posts.Blog.Name</th>
                                         <td>@posts.CreateAt.Day/@posts.CreateAt.Month/@posts.CreateAt.Year</td>
                                         <td>@posts.UpdateAt</td>
                                         <td><a asp-area="Manage" asp-controller="Post" asp-action="Remove" asp-route-Id="@posts.Id" class="btn btn-danger" title="Remove"><i class="bi bi-trash"></i></a></td>
