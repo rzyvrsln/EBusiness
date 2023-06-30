@@ -11,12 +11,13 @@ namespace EBusinessWeb.Controllers
     {
         private readonly IPostService postService;
         private readonly IBlogService blogService;
-        private readonly AppDbContext dbContext;
+        private readonly IEmployeeService employeeService;
 
-        public BlogController(IPostService postService, AppDbContext dbContext)
+        public BlogController(IPostService postService, IEmployeeService employeeService, IBlogService blogService)
         {
             this.postService = postService;
-            this.dbContext = dbContext;
+            this.employeeService = employeeService;
+            this.blogService = blogService;
         }
 
         [HttpGet]
@@ -25,13 +26,19 @@ namespace EBusinessWeb.Controllers
 
             BlogAndPostVM vM = new BlogAndPostVM
             {
-                Blogs =  dbContext.Blogs,
-                Posts = dbContext.Posts
+                Blogs = await blogService.GetAllBlogsAsync(),
+                Posts = await postService.GetAllPostAsync(),
+                Employees = await employeeService.GetAllEmployeeAsync()
+
             };
 
             return View(vM);
         }
         [HttpGet]
-        public async Task<IActionResult> PostDetail() => View();
+        public async Task<IActionResult> PostDetail(int id)
+        {
+            var post = await postService.GetPostByIdAsync(id);
+            return View(post);
+        }
     }
 }

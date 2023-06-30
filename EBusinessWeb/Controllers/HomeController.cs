@@ -6,17 +6,24 @@ namespace EBusinessWeb.Controllers
     public class HomeController : Controller
     {
         private readonly IEmployeeService employeeService;
+        private readonly IPostService postService;
 
-        public HomeController(IEmployeeService employeeService)
+        public HomeController(IEmployeeService employeeService, IPostService postService)
         {
             this.employeeService = employeeService;
+            this.postService = postService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var employees = await employeeService.GetAllEmployeeAsync();
-            return View(employees);
+            
+            BlogAndPostVM vM = new BlogAndPostVM
+            {
+                Employees = await employeeService.GetAllEmployeeAsync(),
+                Posts = await postService.GetAllPostAsync()
+            };
+            return View(vM);
         }
     }
 }

@@ -10,5 +10,6 @@ namespace EBusinessService.Services.Abstraction
         Task RemovePostAsync(int id);
         Task<EditPostVM> EditPostAsync(int id);
         Task EditPostPostAsync(int id, EditPostVM postVM);
+        Task<Post> GetPostByIdAsync(int id);
     }
 }

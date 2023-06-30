@@ -83,6 +83,17 @@ namespace EBusinessService.Services.Concretes
             return await dbContext.Posts.Include(p => p.Blog).ToListAsync();
         }
 
+        public async Task<Post> GetPostByIdAsync(int id)
+        {
+            var postId = await unitOfWork.GetRepository<Post>().GetByIdAsync(id);
+            if(postId is not null)
+            {
+                return postId;
+            }
+
+            return postId;
+        }
+
         public async Task RemovePostAsync(int id)
         {
             var postId = await unitOfWork.GetRepository<Post>().GetByIdAsync(id);
