@@ -43,14 +43,39 @@ namespace EBusinessService.Services.Concretes
             await unitOfWork.SaveChangeAsync();
         }
 
-        public Task<EditPostVM> EditPostAsync(int id)
+        public async Task<EditPostVM> EditPostAsync(int id)
         {
-            throw new NotImplementedException();
+            var postId = await unitOfWork.GetRepository<Post>().GetByIdAsync(id);
+            EditPostVM postVM = new EditPostVM
+            {
+                Title = postId.Title,
+                BlogId = postId.BlogId,
+                Description = postId.Description,
+            };
+
+            return postVM;
         }
 
-        public Task EditPostPostAsync(int id, EditPostVM postVM)
+        public async Task EditPostPostAsync(int id, EditPostVM postVM)
         {
-            throw new NotImplementedException();
+            var postId = await unitOfWork.GetRepository<Post>().GetByIdAsync(id);
+
+            if(postVM is not null)
+            {
+                IFormFile file = postVM.Image;
+                string fileName = Guid.NewGuid().ToString() + file.FileName;
+                using var stream = new FileStream(Path.Combine(environment.WebRootPath, "assets", "img", "post", fileName), FileMode.Create);
+                await file.CopyToAsync(stream);
+                await stream.FlushAsync();
+
+                postId.Title = postVM.Title;
+                postId.BlogId = postVM.BlogId;
+                postId.Description = postVM.Description;
+                postId.ImageUrl = fileName;
+
+                await unitOfWork.GetRepository<Post>().UpdatedAsync(postId);
+                await unitOfWork.SaveChangeAsync();
+            }
         }
 
         public async Task<ICollection<Post>> GetAllPostAsync()

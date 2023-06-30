@@ -10,3 +10,8 @@ C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewM
 C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\refint\EBusinessViewModel.dll
 C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.pdb
 C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\ref\EBusinessViewModel.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\bin\Debug\net6.0\EbusinessCore.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\bin\Debug\net6.0\EBusinessEntity.dll
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\bin\Debug\net6.0\EBusinessEntity.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\bin\Debug\net6.0\EbusinessCore.pdb
+C:\Users\PC\Desktop\EBusiness\EBusinessViewModel\obj\Debug\net6.0\EBusinessViewModel.csproj.CopyComplete

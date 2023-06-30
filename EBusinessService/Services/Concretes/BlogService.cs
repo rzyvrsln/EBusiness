@@ -1,16 +1,21 @@
-﻿using EBusinessData.UnitOfWorks;
+﻿using EBusinessData.DAL;
+using EBusinessData.UnitOfWorks;
 using EBusinessEntity.Entities;
 using EBusinessService.Services.Abstraction;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace EBusinessService.Services.Concretes
 {
     public class BlogService : IBlogService
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly AppDbContext dbContext;
 
-        public BlogService(IUnitOfWork unitOfWork)
+        public BlogService(IUnitOfWork unitOfWork, AppDbContext dbContext)
         {
             this.unitOfWork = unitOfWork;
+            this.dbContext = dbContext;
         }
 
         public async Task AddBlogAsync(Blog blog)

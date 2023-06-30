@@ -295,7 +295,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessEntity\\EBusinessEntity.csproj": {
+                "projectPath": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessEntity\\EBusinessEntity.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

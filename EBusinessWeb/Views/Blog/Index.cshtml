@@ -1,5 +1,6 @@
-﻿<!-- End Header -->
-
+﻿@using EBusinessEntity.Entities;
+<!-- End Header -->
+@model BlogAndPostVM
 <main id="main">
 
     <!-- ======= Blog Header ======= -->
@@ -100,27 +101,13 @@
                             <div class="left-blog">
                                 <h4>categories</h4>
                                 <ul>
-                                    <li>
-                                        <a href="#">Portfolio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Project</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">wordpress</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Joomla</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Html</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Website</a>
-                                    </li>
+                                    @foreach (var models in Model.Blogs.OrderByDescending(b => b.Id).Take(9))
+                                    {
+                                        <li>
+                                            <a asp-route-Id="@models.Id">@models.Name</a>
+                                        </li>
+                                    }
+
                                 </ul>
                             </div>
                         </div>
@@ -183,37 +170,43 @@
                 </div>
                 <!-- End left sidebar -->
                 <!-- Start single blog -->
+
+
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="single-blog">
-                                <div class="single-blog-img">
-                                    <a asp-controller="Blog" asp-action="BlogDetail">
-                                        <img src="~/assets/img/blog/1.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-meta">
-                                    <span class="comments-type">
-                                        <i class="bi bi-chat"></i>
-                                        <a href="#">11 comments</a>
+                        @foreach (var posts in Model.Posts.OrderByDescending(p =>p.Id).Take(2))
+                        {
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="single-blog">
+                                    <div class="single-blog-img">
+                                        <a asp-controller="Blog" asp-action="PostDetail" asp-route-id="@posts.Id">
+                                            <img src="~/assets/img/post/@posts.ImageUrl" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="blog-meta">
+                                        <span class="comments-type">
+                                            <i class="bi bi-chat"></i>
+                                            <a href="#">11 comments</a>
+                                        </span>
+                                        <span class="date-type">
+                                            <i class="bi bi-calendar"></i>2016-03-05 / 09:10:16
+                                        </span>
+                                    </div>
+                                    <div class="blog-text">
+                                        <h4>
+                                            <a href="#">@posts.Title</a>
+                                        </h4>
+                                        <p>
+                                            @posts.Description
+                                        </p>
+                                    </div>
+                                    <span>
+                                        <a asp-controller="Blog" asp-action="PostDetail" asp-route-id="@posts.Id" class="ready-btn">Read more</a>
                                     </span>
-                                    <span class="date-type">
-                                        <i class="bi bi-calendar"></i>2016-03-05 / 09:10:16
-                                    </span>
                                 </div>
-                                <div class="blog-text">
-                                    <h4>
-                                        <a href="#">Post my imagine Items</a>
-                                    </h4>
-                                    <p>
-                                        Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
-                                    </p>
-                                </div>
-                                <span>
-                                    <a asp-controller="Blog" asp-action="BlogDetail" class="ready-btn">Read more</a>
-                                </span>
                             </div>
-                        </div>
+                        }
+
                         <!-- End single blog -->
                         <div class="blog-pagination">
                             <ul class="pagination">
@@ -226,6 +219,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div><!-- End Blog Page -->

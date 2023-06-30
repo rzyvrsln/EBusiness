@@ -53,5 +53,25 @@ namespace EBusinessWeb.Areas.Manage.Controllers
             await postService.RemovePostAsync(id);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var postId = await postService.EditPostAsync(id);
+            ViewBag.Blogs = new SelectList(dbContext.Blogs, nameof(Blog.Id), nameof(Blog.Name));
+            return View(postId);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditPostVM postVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Blogs = new SelectList(dbContext.Blogs, nameof(Blog.Id), nameof(Blog.Name));
+                return View();
+            }
+            await postService.EditPostPostAsync(id, postVM);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
