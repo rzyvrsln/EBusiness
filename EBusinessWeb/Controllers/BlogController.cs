@@ -51,5 +51,11 @@ namespace EBusinessWeb.Controllers
             }
             return RedirectToAction(nameof(Index),"Home");
         }
+
+        public async Task<IActionResult> CategoryBlog(int id)
+        {
+
+            return View();
+        }
     }
 }

@@ -47,7 +47,7 @@
                                 <h4>recent post</h4>
                                 <div class="recent-post">
                                     <!-- start single post -->
-                                @foreach (var posts in Model.Posts.Take(4).OrderByDescending(p => p.Id))
+                                @foreach (var posts in Model.Posts.Take(8).OrderByDescending(p => p.Id))
                                 {
                                     <div class="recent-single-post">
                                         <div class="post-img">
@@ -58,7 +58,7 @@
                                         <div class="pst-content">
                                             @if (@posts.Description.Length > 45)
                                             {
-                                                <p><a href="#"> @posts.Description.Substring(0,45)...</a></p>
+                                                <p><a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id"> @posts.Description.Substring(0,45)...</a></p>
                                             }
                                             else
                                             {
@@ -82,13 +82,13 @@
                                     @foreach (var models in Model.Blogs.OrderByDescending(b => b.Id).Take(9))
                                     {
                                         <li>
-                                            <a asp-route-Id="@models.Id">@models.Name</a>
+                                            <a asp-controller="Blog" asp-action="CategoryBlog" asp-route-Id="@models.Id">@models.Name</a>
                                         </li>
                                     }
                                 </ul>
                             </div>
                         </div>
-                        <div class="single-blog-page">
+                        @* <div class="single-blog-page">
                             <div class="left-blog">
                                 <h4>archive</h4>
                                 <ul>
@@ -109,8 +109,8 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="single-blog-page">
+                        </div> *@
+                        @* <div class="single-blog-page">
                             <div class="left-tags blog-tags">
                                 <div class="popular-tag left-side-tags left-blog">
                                     <h4>popular tags</h4>
@@ -142,7 +142,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> *@
                     </div>
                 </div>
                 <!-- End left sidebar -->
