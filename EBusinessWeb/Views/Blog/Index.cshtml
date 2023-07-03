@@ -50,18 +50,18 @@
                                 {
                                     <div class="recent-single-post">
                                         <div class="post-img">
-                                            <a href="#">
+                                            <a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id">
                                                 <img src="~/assets/img/post/@posts.ImageUrl" alt="">
                                             </a>
                                         </div>
                                         <div class="pst-content">
-                                            @if (@posts.Description.Length > 18)
+                                            @if (@posts.Description.Length > 45)
                                             {
-                                                <p><a href="#"> @posts.Description.Substring(0,18)...</a></p>
+                                                <p><a href="#"> @posts.Description.Substring(0,45)...</a></p>
                                             }
                                             else
                                             {
-                                                <p><a href="#"> @posts.Description</a></p>
+                                                <p><a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id"> @posts.Description.</a></p>
                                             }
 
                                         </div>
