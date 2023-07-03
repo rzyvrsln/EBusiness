@@ -38,7 +38,15 @@ namespace EBusinessWeb.Controllers
         public async Task<IActionResult> PostDetail(int id)
         {
             var post = await postService.GetPostByIdAsync(id);
-            return View(post);
+
+            BlogAndPostVM vM = new BlogAndPostVM
+            {
+                Post = post,
+                Posts = await postService.GetAllPostAsync(),
+                Blogs = await blogService.GetAllBlogsAsync()
+
+            };
+            return View(vM);
         }
     }
 }

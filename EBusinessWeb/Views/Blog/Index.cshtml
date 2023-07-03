@@ -1,4 +1,4 @@
-﻿@using EBusinessEntity.Entities;
+﻿@using EBusinessViewModel.Entities;
 <!-- End Header -->
 @model BlogAndPostVM
 <main id="main">
@@ -46,52 +46,28 @@
                                 <h4>recent post</h4>
                                 <div class="recent-post">
                                     <!-- start single post -->
+                                @foreach (var posts in Model.Posts.Take(4).OrderByDescending(p => p.Id))
+                                {
                                     <div class="recent-single-post">
                                         <div class="post-img">
                                             <a href="#">
-                                                <img src="~/assets/img/blog/1.jpg" alt="">
+                                                <img src="~/assets/img/post/@posts.ImageUrl" alt="">
                                             </a>
                                         </div>
                                         <div class="pst-content">
-                                            <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
+                                            @if (@posts.Description.Length > 18)
+                                            {
+                                                <p><a href="#"> @posts.Description.Substring(0,18)...</a></p>
+                                            }
+                                            else
+                                            {
+                                                <p><a href="#"> @posts.Description</a></p>
+                                            }
+
                                         </div>
                                     </div>
-                                    <!-- End single post -->
-                                    <!-- start single post -->
-                                    <div class="recent-single-post">
-                                        <div class="post-img">
-                                            <a href="#">
-                                                <img src="~/assets/img/blog/2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="pst-content">
-                                            <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                                        </div>
-                                    </div>
-                                    <!-- End single post -->
-                                    <!-- start single post -->
-                                    <div class="recent-single-post">
-                                        <div class="post-img">
-                                            <a href="#">
-                                                <img src="~/assets/img/blog/3.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="pst-content">
-                                            <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                                        </div>
-                                    </div>
-                                    <!-- End single post -->
-                                    <!-- start single post -->
-                                    <div class="recent-single-post">
-                                        <div class="post-img">
-                                            <a href="#">
-                                                <img src="~/assets/img/blog/4.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="pst-content">
-                                            <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                                        </div>
-                                    </div>
+                                }
+                                    
                                     <!-- End single post -->
                                 </div>
                             </div>
