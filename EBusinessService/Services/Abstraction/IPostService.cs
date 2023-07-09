@@ -1,4 +1,5 @@
 ﻿using EBusinessEntity.Entities;
+using EBusinessViewModel.Entities.Pagination;
 using EBusinessViewModel.Entities.Post;
 
 namespace EBusinessService.Services.Abstraction
@@ -11,5 +12,6 @@ namespace EBusinessService.Services.Abstraction
         Task<EditPostVM> EditPostAsync(int id);
         Task EditPostPostAsync(int id, EditPostVM postVM);
         Task<Post> GetPostByIdAsync(int id);
+        Task<PaginationVM<Post>> PaginationForPostAsync(int page);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EBusinessEntity.Entities;
+using EBusinessViewModel.Entities.Pagination;
 
 namespace EBusinessService.Services.Abstraction
 {
@@ -9,5 +10,6 @@ namespace EBusinessService.Services.Abstraction
         Task RemovePositionAsync(int id);
         Task<Position> EditPositionAsync(int id);
         Task EditPositionPostAsync(int id, Position position);
+        Task<PaginationVM<Position>> PaginationForPositionAsync(int page = 1);
     }
 }

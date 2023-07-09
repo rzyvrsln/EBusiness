@@ -10,5 +10,7 @@ namespace EBusinessEntity.Entities
 
         public int BlogId { get; set; }
         public Blog? Blog { get; set; }
+
+        public ICollection<Comment>? Comments { get; set; }
     }
 }

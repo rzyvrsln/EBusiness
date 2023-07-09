@@ -12,12 +12,14 @@ namespace EBusinessWeb.Controllers
         private readonly IPostService postService;
         private readonly IBlogService blogService;
         private readonly IEmployeeService employeeService;
+        private readonly ICommentService commentService;
 
-        public BlogController(IPostService postService, IEmployeeService employeeService, IBlogService blogService)
+        public BlogController(IPostService postService, IEmployeeService employeeService, IBlogService blogService, ICommentService commentService)
         {
             this.postService = postService;
             this.employeeService = employeeService;
             this.blogService = blogService;
+            this.commentService = commentService;
         }
 
         [HttpGet]
@@ -44,7 +46,8 @@ namespace EBusinessWeb.Controllers
                 {
                     Post = post,
                     Posts = await postService.GetAllPostAsync(),
-                    Blogs = await blogService.GetAllBlogsAsync()
+                    Blogs = await blogService.GetAllBlogsAsync(),
+                    Comments = await commentService.GetAllIncludeCommentsAsync()
                 };
 
                 return View(vM);
@@ -52,10 +55,12 @@ namespace EBusinessWeb.Controllers
             return RedirectToAction(nameof(Index),"Home");
         }
 
-        public async Task<IActionResult> CategoryBlog(int id)
+        [HttpPost]
+        public async Task<IActionResult> Comment(Comment comment)
         {
-
-            return View();
+            if (!ModelState.IsValid) return View();
+            await commentService.AddCommentAsync(comment);
+            return RedirectToAction(nameof(PostDetail));
         }
     }
 }

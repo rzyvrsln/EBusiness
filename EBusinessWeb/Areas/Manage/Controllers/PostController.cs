@@ -22,10 +22,9 @@ namespace EBusinessWeb.Areas.Manage.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            ICollection<Post> posts = await postService.GetAllPostAsync();
-            return View(posts);
+            return View(await postService.PaginationForPostAsync(page));
         }
 
         [HttpGet]

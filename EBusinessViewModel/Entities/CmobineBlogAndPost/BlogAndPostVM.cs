@@ -6,5 +6,7 @@ public class BlogAndPostVM
     public IEnumerable<Post>? Posts { get; set; }
     public Post? Post { get; set; }
     public IEnumerable<Employee>? Employees { get; set; }
+    public Comment? Comment { get; set; }
+    public IEnumerable<Comment>? Comments { get; set; }
 }
 

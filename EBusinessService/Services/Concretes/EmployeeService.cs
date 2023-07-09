@@ -3,6 +3,7 @@ using EBusinessData.UnitOfWorks;
 using EBusinessEntity.Entities;
 using EBusinessService.Services.Abstraction;
 using EBusinessViewModel.Entities.Employee;
+using EBusinessViewModel.Entities.Pagination;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -104,6 +105,17 @@ namespace EBusinessService.Services.Concretes
                 await unitOfWork.GetRepository<Employee>().UpdatedAsync(employeeId);
                 await unitOfWork.SaveChangeAsync();
             }
+        }
+
+        public async Task<PaginationVM<Employee>> PaginationForEmployeeAsync(int page = 1)
+        {
+            PaginationVM<Employee> paginationVM = new PaginationVM<Employee>();
+            paginationVM.MaxPageCount = (int)Math.Ceiling((double)dbContext.Employees.Count() / 5);
+            paginationVM.CurrentPage = page;
+            if (page > paginationVM.MaxPageCount || page < 1) return null;
+            paginationVM.Items = await dbContext.Employees.Skip((page - 1) * 5).Take(5).ToListAsync();
+
+            return paginationVM;
         }
     }
 }

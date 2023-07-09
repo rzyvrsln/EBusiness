@@ -16,6 +16,7 @@ namespace EBusinessService.Extensions
             service.AddScoped<IContactService, ContactService>();
             service.AddScoped<IBlogService, BlogService>();
             service.AddScoped<IPostService, PostService>();
+            service.AddScoped<ICommentService, CommentService>();
 
             service.AddIdentity<AppUser, IdentityRole>(option =>
             {

@@ -1,7 +1,10 @@
-﻿using EBusinessEntity.Entities;
+﻿using EBusinessData.DAL;
+using EBusinessEntity.Entities;
 using EBusinessService.Services.Abstraction;
+using EBusinessViewModel.Entities.Pagination;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EBusinessWeb.Areas.Manage.Controllers
 {
@@ -17,9 +20,9 @@ namespace EBusinessWeb.Areas.Manage.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page  = 1)
         {
-            return View(await positionService.GetAllPositionsAsync());
+            return View(await positionService.PaginationForPositionAsync(page));
         }
 
         [HttpGet]

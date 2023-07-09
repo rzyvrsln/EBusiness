@@ -16,10 +16,9 @@ namespace EBusinessWeb.Areas.Manage.Controllers
             this.blogService = blogService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var blogs = await blogService.GetAllBlogsAsync();
-            return View(blogs);
+            return View(await blogService.PaginationForBlogAsync(page));
         }
         [HttpGet]
         public async Task<IActionResult> Add() => View();

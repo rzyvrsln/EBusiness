@@ -57,8 +57,28 @@
       "PackagePath": "staticwebassets\\assets\\img\\blog\\b02.jpg"
     },
     {
+      "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\4f730711-0fc5-478b-91e1-eb90dddb8d85Screenshot (7).png",
+      "PackagePath": "staticwebassets\\assets\\img\\employee\\4f730711-0fc5-478b-91e1-eb90dddb8d85Screenshot (7).png"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\66afa5bd-c0ab-4777-82fa-bac7ad90ec57Screenshot (7).png",
+      "PackagePath": "staticwebassets\\assets\\img\\employee\\66afa5bd-c0ab-4777-82fa-bac7ad90ec57Screenshot (7).png"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\6ffabcdc-eb03-4645-b808-97acd59b483cScreenshot (15).png",
+      "PackagePath": "staticwebassets\\assets\\img\\employee\\6ffabcdc-eb03-4645-b808-97acd59b483cScreenshot (15).png"
+    },
+    {
       "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\7af9d7d6-cc3e-410f-a797-7f9802c5d46cScreenshot (9).png",
       "PackagePath": "staticwebassets\\assets\\img\\employee\\7af9d7d6-cc3e-410f-a797-7f9802c5d46cScreenshot (9).png"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\88534d42-3a6c-4416-963f-8445993ad23fScreenshot (14).png",
+      "PackagePath": "staticwebassets\\assets\\img\\employee\\88534d42-3a6c-4416-963f-8445993ad23fScreenshot (14).png"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\employee\\b3b3ab76-9b6a-487e-a9c2-8b8e6a139336Screenshot (8).png",
+      "PackagePath": "staticwebassets\\assets\\img\\employee\\b3b3ab76-9b6a-487e-a9c2-8b8e6a139336Screenshot (8).png"
     },
     {
       "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\favicon.png",
@@ -107,6 +127,10 @@
     {
       "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\post\\1e5fba50-99ea-4b93-bfce-af5af5f63bb0Screenshot (16).png",
       "PackagePath": "staticwebassets\\assets\\img\\post\\1e5fba50-99ea-4b93-bfce-af5af5f63bb0Screenshot (16).png"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\post\\2445f573-844d-4db3-81dc-7413b0fe59eaScreenshot (34).png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\2445f573-844d-4db3-81dc-7413b0fe59eaScreenshot (34).png"
     },
     {
       "Id": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\wwwroot\\assets\\img\\post\\4d0a035f-eba7-4d39-879d-8179d95743f2100949622_110467794018290_7948899173904941056_n.jpg",

@@ -23,10 +23,9 @@ namespace EBusinessWeb.Areas.Manage.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            ICollection<Employee> employees = await employeeService.GetAllEmployeeAsync();
-            return View(employees);
+            return View(await employeeService.PaginationForEmployeeAsync(page));
         }
 
         [HttpGet]

@@ -2,6 +2,7 @@
 using EBusinessData.UnitOfWorks;
 using EBusinessEntity.Entities;
 using EBusinessService.Services.Abstraction;
+using EBusinessViewModel.Entities.Pagination;
 using EBusinessViewModel.Entities.Post;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -101,6 +102,16 @@ namespace EBusinessService.Services.Concretes
             string filePath = Path.Combine(environment.WebRootPath, "assets", "img", "post", postId.ImageUrl);
             File.Delete(filePath);
             await unitOfWork.SaveChangeAsync();
+        }
+
+        public async Task<PaginationVM<Post>> PaginationForPostAsync(int page)
+        {
+            PaginationVM<Post> paginationVM = new PaginationVM<Post>();
+            paginationVM.MaxPageCount = (int)Math.Ceiling((decimal)dbContext.Posts.Count() / 5);
+            paginationVM.CurrentPage = page;
+            if (paginationVM.CurrentPage > paginationVM.MaxPageCount || page < 1) return null;
+            paginationVM.Items = await dbContext.Posts.Skip((page - 1) * 5).Take(5).Include(p => p.Blog).ToListAsync();
+            return paginationVM;
         }
     }
 }

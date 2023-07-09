@@ -1,6 +1,7 @@
 ﻿@using EBusinessEntity.Entities;
+@using EBusinessViewModel.Entities.Pagination;
 
-@model ICollection<Blog>
+@model PaginationVM<Blog>
 <main id="main" class="main">
 
     <div class="pagetitle">
@@ -27,11 +28,12 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Blog</th>
                                     <th scope="col">Created Date</th>
+                                    <th scope="col">Updated Date</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var blogs in Model ?? new List<Blog>())
+                                @foreach (var blogs in Model.Items ?? new List<Blog>())
                                 {
                                     <tr>
                                         <th scope="row">@blogs.Id</th>
@@ -45,6 +47,23 @@
                             </tbody>
                         </table>
                         <!-- End Tables without borders -->
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                @if (Model.CurrentPage > 1)
+                                {
+                                    <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)">Previous</a></li>
+                                }
+                                @for (int i = 1; i <= Model.MaxPageCount; i++)
+                                {
+                                    <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@i">@i</a></li>
+                                }
+                                @if (Model.CurrentPage < Model.MaxPageCount)
+                                {
+                                    <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)">Next</a></li>
+                                }
+                            </ul>
+                        </nav>
 
                     </div>
                 </div>

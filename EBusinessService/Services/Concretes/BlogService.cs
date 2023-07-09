@@ -2,6 +2,7 @@
 using EBusinessData.UnitOfWorks;
 using EBusinessEntity.Entities;
 using EBusinessService.Services.Abstraction;
+using EBusinessViewModel.Entities.Pagination;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
@@ -37,7 +38,7 @@ namespace EBusinessService.Services.Concretes
         public async Task EditPostBlogAsync(int id, Blog blog)
         {
             var blogId = await unitOfWork.GetRepository<Blog>().GetByIdAsync(id);
-            if(blogId != null)
+            if (blogId != null)
             {
                 blogId.Name = blog.Name;
                 blogId.UpdateAt = DateTime.Now;
@@ -57,6 +58,18 @@ namespace EBusinessService.Services.Concretes
             var blogId = await unitOfWork.GetRepository<Blog>().GetByIdAsync(id);
             await unitOfWork.GetRepository<Blog>().DeleteAsync(blogId);
             await unitOfWork.SaveChangeAsync();
+        }
+
+        public async Task<PaginationVM<Blog>> PaginationForBlogAsync(int page)
+        {
+            PaginationVM<Blog> paginationVM = new PaginationVM<Blog>();
+            paginationVM.MaxPageCount = (int)Math.Ceiling((decimal)dbContext.Blogs.Count() / 5);
+            paginationVM.CurrentPage = page;
+            if (paginationVM.CurrentPage > paginationVM.MaxPageCount || page < 1) return null;
+            paginationVM.Items = await dbContext.Blogs.Skip((page - 1) * 5).Take(5).ToListAsync();
+
+            return paginationVM;
+
         }
     }
 }
