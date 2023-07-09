@@ -13,5 +13,6 @@ namespace EBusinessService.Services.Abstraction
         Task EditPostPostAsync(int id, EditPostVM postVM);
         Task<Post> GetPostByIdAsync(int id);
         Task<PaginationVM<Post>> PaginationForPostAsync(int page);
+        Task<PaginationVM<Post>> PaginationForWebPagePostAsync(int page);
     }
 }

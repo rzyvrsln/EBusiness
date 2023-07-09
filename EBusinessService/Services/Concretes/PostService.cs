@@ -113,5 +113,15 @@ namespace EBusinessService.Services.Concretes
             paginationVM.Items = await dbContext.Posts.Skip((page - 1) * 5).Take(5).Include(p => p.Blog).ToListAsync();
             return paginationVM;
         }
+
+        public async Task<PaginationVM<Post>> PaginationForWebPagePostAsync(int page)
+        {
+            PaginationVM<Post> paginationVM = new PaginationVM<Post>();
+            paginationVM.MaxPageCount = (int)Math.Ceiling((decimal)dbContext.Posts.Count() / 2);
+            paginationVM.CurrentPage = page;
+            if (paginationVM.CurrentPage > paginationVM.MaxPageCount || page < 1) return null;
+            paginationVM.Items = await dbContext.Posts.Skip((page - 1) * 2).Take(2).Include(p => p.Blog).OrderByDescending(p => p.Id).ToListAsync();
+            return paginationVM;
+        }
     }
 }

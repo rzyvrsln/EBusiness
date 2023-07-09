@@ -46,28 +46,28 @@
                                 <h4>recent post</h4>
                                 <div class="recent-post">
                                     <!-- start single post -->
-                                @foreach (var posts in Model.Posts.Take(8).OrderByDescending(p => p.Id))
-                                {
-                                    <div class="recent-single-post">
-                                        <div class="post-img">
-                                            <a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id">
-                                                <img src="~/assets/img/post/@posts.ImageUrl" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="pst-content">
-                                            @if (@posts.Description.Length > 45)
-                                            {
-                                                <p><a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id"> @posts.Description.Substring(0,45)...</a></p>
-                                            }
-                                            else
-                                            {
-                                                <p><a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id"> @posts.Description.</a></p>
-                                            }
+                                    @foreach (var posts in Model.Posts.Take(8).OrderByDescending(p => p.Id))
+                                    {
+                                        <div class="recent-single-post">
+                                            <div class="post-img">
+                                                <a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id">
+                                                    <img src="~/assets/img/post/@posts.ImageUrl" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="pst-content">
+                                                @if (@posts.Description.Length > 45)
+                                                {
+                                                    <p><a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id"> @posts.Description.Substring(0,45)...</a></p>
+                                                }
+                                                else
+                                                {
+                                                    <p><a asp-controller="Blog" asp-action="PostDetail" asp-route-Id="@posts.Id"> @posts.Description.</a></p>
+                                                }
 
+                                            </div>
                                         </div>
-                                    </div>
-                                }
-                                    
+                                    }
+
                                     <!-- End single post -->
                                 </div>
                             </div>
@@ -88,59 +88,59 @@
                             </div>
                         </div>
                         @* <div class="single-blog-page">
-                            <div class="left-blog">
-                                <h4>archive</h4>
-                                <ul>
-                                    <li>
-                                        <a href="#">07 July 2016</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">29 June 2016</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">13 May 2016</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">20 March 2016</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">09 Fabruary 2016</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="left-blog">
+                        <h4>archive</h4>
+                        <ul>
+                        <li>
+                        <a href="#">07 July 2016</a>
+                        </li>
+                        <li>
+                        <a href="#">29 June 2016</a>
+                        </li>
+                        <li>
+                        <a href="#">13 May 2016</a>
+                        </li>
+                        <li>
+                        <a href="#">20 March 2016</a>
+                        </li>
+                        <li>
+                        <a href="#">09 Fabruary 2016</a>
+                        </li>
+                        </ul>
+                        </div>
                         </div> *@
                         @* <div class="single-blog-page">
-                            <div class="left-tags blog-tags">
-                                <div class="popular-tag left-side-tags left-blog">
-                                    <h4>popular tags</h4>
-                                    <ul>
-                                        <li>
-                                            <a href="#">Portfolio</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Project</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Design</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Website</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Joomla</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Html</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">wordpress</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Masonry</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="left-tags blog-tags">
+                        <div class="popular-tag left-side-tags left-blog">
+                        <h4>popular tags</h4>
+                        <ul>
+                        <li>
+                        <a href="#">Portfolio</a>
+                        </li>
+                        <li>
+                        <a href="#">Project</a>
+                        </li>
+                        <li>
+                        <a href="#">Design</a>
+                        </li>
+                        <li>
+                        <a href="#">Website</a>
+                        </li>
+                        <li>
+                        <a href="#">Joomla</a>
+                        </li>
+                        <li>
+                        <a href="#">Html</a>
+                        </li>
+                        <li>
+                        <a href="#">wordpress</a>
+                        </li>
+                        <li>
+                        <a href="#">Masonry</a>
+                        </li>
+                        </ul>
+                        </div>
+                        </div>
                         </div> *@
                     </div>
                 </div>
@@ -150,7 +150,7 @@
 
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <div class="row">
-                        @foreach (var posts in Model.Posts.OrderByDescending(p =>p.Id).Take(2))
+                        @foreach (var posts in Model.PaginationVM.Items)
                         {
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="single-blog">
@@ -184,15 +184,22 @@
                         }
 
                         <!-- End single blog -->
-                        <div class="blog-pagination">
+                        <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
-                                <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                <li class="page-item"><a href="#" class="page-link">3</a></li>
-                                <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+                                @if (Model.PaginationVM.CurrentPage > 1)
+                                {
+                                    <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@(Model.PaginationVM.CurrentPage - 1)">Previous</a></li>
+                                }
+                                @for (int i = 1; i <= Model.PaginationVM.MaxPageCount; i++)
+                                {
+                                    <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@i">@i</a></li>
+                                }
+                                @if (Model.PaginationVM.CurrentPage < Model.PaginationVM.MaxPageCount)
+                                {
+                                    <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page="@(Model.PaginationVM.CurrentPage + 1)">Next</a></li>
+                                }
                             </ul>
-                        </div>
+                        </nav>
                     </div>
                 </div>
 

@@ -23,15 +23,15 @@ namespace EBusinessWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
 
             BlogAndPostVM vM = new BlogAndPostVM
             {
                 Blogs = await blogService.GetAllBlogsAsync(),
                 Posts = await postService.GetAllPostAsync(),
-                Employees = await employeeService.GetAllEmployeeAsync()
-
+                Employees = await employeeService.GetAllEmployeeAsync(),
+                PaginationVM = await postService.PaginationForWebPagePostAsync(page)
             };
 
             return View(vM);
