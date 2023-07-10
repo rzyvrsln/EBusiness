@@ -31,7 +31,8 @@ namespace EBusinessWeb.Controllers
                 Blogs = await blogService.GetAllBlogsAsync(),
                 Posts = await postService.GetAllPostAsync(),
                 Employees = await employeeService.GetAllEmployeeAsync(),
-                PaginationVM = await postService.PaginationForWebPagePostAsync(page)
+                PaginationVM = await postService.PaginationForWebPagePostAsync(page),
+                Comments = await commentService.GetAllIncludeCommentsAsync()
             };
 
             return View(vM);
@@ -56,11 +57,11 @@ namespace EBusinessWeb.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Comment(Comment comment)
+        public async Task<IActionResult> Comment(int id, Comment comment)
         {
             if (!ModelState.IsValid) return View();
-            await commentService.AddCommentAsync(comment);
-            return RedirectToAction(nameof(PostDetail));
+            await commentService.AddCommentAsync(id, comment);
+            return RedirectToAction("PostDetail", new RouteValueDictionary(new { Controller = "Blog", Action = "PostDetail", id = id }));
         }
     }
 }

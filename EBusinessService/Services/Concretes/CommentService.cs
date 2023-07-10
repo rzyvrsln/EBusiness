@@ -17,16 +17,17 @@ namespace EBusinessService.Services.Concretes
             this.dbContext = dbContext;
         }
 
-        public async Task AddCommentAsync(Comment comment)
+        public async Task AddCommentAsync(int id, Comment comment)
         {
-            if (comment is not null)
+            var post = await dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
+            if (comment is not null || post is not null)
             {
                 Comment nComment = new Comment
                 {
                     Name = comment.Name,
                     Email = comment.Email,
                     Comments = comment.Comments,
-                    PostId = comment.PostId
+                    PostId = post.Id
                 };
                 await unitOfWork.GetRepository<Comment>().AddAsync(nComment);
                 await unitOfWork.SaveChangeAsync();

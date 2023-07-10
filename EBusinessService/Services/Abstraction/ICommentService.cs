@@ -4,7 +4,7 @@ namespace EBusinessService.Services.Abstraction
 {
     public interface ICommentService
     {
-        Task AddCommentAsync(Comment comment);
+        Task AddCommentAsync(int id, Comment comment);
         Task<ICollection<Comment>> GetAllIncludeCommentsAsync();
     }
 }

@@ -162,7 +162,7 @@
                                         <span class="author-meta"><i class="bi bi-person"></i> <a href="#">admin</a></span>
                                         <span><i class="bi bi-clock"></i> @Model.Post.CreateAt.Date</span>
 
-                                        <span><i class="bi bi-chat"></i> <a href="#">6 comments</a></span>
+                                        <span><i class="bi bi-chat"></i> <a href="#">@Model.Comments.Where(c => c.PostId == Model.Post.Id).Count() comments</a></span>
                                     </div>
                                     <div class="entry-content">
                                         <blockquote>
@@ -177,7 +177,7 @@
                             <div class="single-post-comments">
                                 <div class="comments-area">
                                     <div class="comments-heading">
-                                        <h3>6 comments</h3>
+                                        <h3>@Model.Comments.Where(c => c.PostId == Model.Post.Id).Count() comments</h3>
                                     </div>
                                     <div class="comments-list">
                                         <ul>
@@ -213,7 +213,7 @@
                                         object userName = User.FindFirstValue(ClaimTypes.Name);
                                         object userEmail = User.FindFirstValue(ClaimTypes.Email);
 
-                                        <form asp-controller="Blog" asp-action="Comment">
+                                        <form method="post" asp-controller="Blog" asp-action="Comment">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4">
                                                     <p>Name *</p>
@@ -226,7 +226,7 @@
                                                 <div class="col-lg-12 col-md-12 col-sm-12 comment-form-comment">
                                                     <p>Comment</p>
                                                     <textarea asp-for="@Model.Comment.Comments" id="message-box" cols="30" rows="10" required></textarea>
-                                                    <button class="btn btn-outline-primary" type="submit">Post comment</button>
+                                                    <button class="btn btn-outline-primary" asp-controller="Blog" asp-action="Comment" asp-route-Id="@Model.Post.Id" type="submit">Post comment</button>
                                                 </div>
                                             </div>
                                         </form>
