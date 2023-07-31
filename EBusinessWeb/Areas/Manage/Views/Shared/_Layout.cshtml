@@ -489,6 +489,9 @@
     <script src="~/manage/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
+    @await RenderSectionAsync("Scripts",false);
+    @await Component.InvokeAsync("NToastNotify")
+
     <script src="~/manage/js/main.js"></script>
 
 </body>

@@ -1,9 +1,11 @@
 ﻿using EBusinessEntity.Entities;
 using EBusinessService.Extensions;
 using EBusinessService.Services.Abstraction;
+using EBusinessWeb.ResultMessages;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NToastNotify;
 
 namespace EBusinessWeb.Areas.Manage.Controllers
 {
@@ -13,11 +15,13 @@ namespace EBusinessWeb.Areas.Manage.Controllers
     {
         private readonly IBlogService blogService;
         private readonly IValidator<Blog> validator;
+        private readonly IToastNotification toastNotification;
 
-        public BlogController(IBlogService blogService, IValidator<Blog> validator)
+        public BlogController(IBlogService blogService, IValidator<Blog> validator, IToastNotification toastNotification)
         {
             this.blogService = blogService;
             this.validator = validator;
+            this.toastNotification = toastNotification;
         }
 
         public async Task<IActionResult> Index(int page = 1)
@@ -35,6 +39,7 @@ namespace EBusinessWeb.Areas.Manage.Controllers
             if (result.IsValid)
             {
                 await blogService.AddBlogAsync(blog);
+                toastNotification.AddSuccessToastMessage(Messages.Blog.Add(blog.Name));
                 return RedirectToAction("Add", "Blog");
             }
 

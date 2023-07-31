@@ -1,6 +1,6 @@
 using EBusinessData.Extensions;
 using EBusinessService.Extensions;
-using Microsoft.AspNetCore.Identity;
+using NToastNotify;
 
 namespace EBusinessWeb
 {
@@ -9,7 +9,7 @@ namespace EBusinessWeb
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddNToastNotifyToastr();
             builder.Services.LoadDataLayerExtension(builder.Configuration);
             builder.Services.LoadServiceLayerExtension();
 
@@ -21,6 +21,7 @@ namespace EBusinessWeb
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseNToastNotify();
 
             app.MapControllerRoute(
                   name: "areas",
