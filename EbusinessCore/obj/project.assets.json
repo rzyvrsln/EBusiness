@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\EBusiness\\EbusinessCore\\EbusinessCore.csproj",
+      "projectUniqueName": "E:\\EBusiness-Like-Blog-Site-\\EbusinessCore\\EbusinessCore.csproj",
       "projectName": "EbusinessCore",
-      "projectPath": "C:\\Users\\PC\\Desktop\\EBusiness\\EbusinessCore\\EbusinessCore.csproj",
+      "projectPath": "E:\\EBusiness-Like-Blog-Site-\\EbusinessCore\\EbusinessCore.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\EBusiness\\EbusinessCore\\obj\\",
+      "outputPath": "E:\\EBusiness-Like-Blog-Site-\\EbusinessCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

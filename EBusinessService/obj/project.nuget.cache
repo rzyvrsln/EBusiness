@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Kd/BQozHwy7aKrWZCmyqS3kGOTI//C4lVVFeaDa+A014WaNq1AMIYi4OPrUKnPZ1A35/KDGJaLprTE7FYYblUA==",
+  "dgSpecHash": "889bw4qgxC6sC0s7PcH+04RCV9CLPEmgkWQhBoiF687N1/rKWOTg4ZWnr/QvIRTuQ6qZ/A5BFrVIVb5vV3iCGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessService\\EBusinessService.csproj",
+  "projectFilePath": "E:\\EBusiness-Like-Blog-Site-\\EBusinessService\\EBusinessService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation\\11.6.0\\fluentvalidation.11.6.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.6.0\\fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

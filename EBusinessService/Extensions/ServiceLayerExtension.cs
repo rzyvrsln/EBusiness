@@ -1,9 +1,12 @@
 ﻿using EBusinessData.DAL;
 using EBusinessEntity.Entities;
+using EBusinessService.FluentValidations;
 using EBusinessService.Services.Abstraction;
 using EBusinessService.Services.Concretes;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
 
 namespace EBusinessService.Extensions
 {
@@ -17,6 +20,7 @@ namespace EBusinessService.Extensions
             service.AddScoped<IBlogService, BlogService>();
             service.AddScoped<IPostService, PostService>();
             service.AddScoped<ICommentService, CommentService>();
+            
 
             service.AddIdentity<AppUser, IdentityRole>(option =>
             {
@@ -28,6 +32,14 @@ namespace EBusinessService.Extensions
                 option.User.RequireUniqueEmail = true;
                 option.Lockout.AllowedForNewUsers = true;
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
+            service.AddControllersWithViews().AddFluentValidation(opt =>
+            {
+                opt.RegisterValidatorsFromAssemblyContaining<BlogValidator>();
+                opt.DisableDataAnnotationsValidation = true;
+                opt.ValidatorOptions.LanguageManager.Culture = new CultureInfo("az");
+            });
+
             return service;
         }
     }

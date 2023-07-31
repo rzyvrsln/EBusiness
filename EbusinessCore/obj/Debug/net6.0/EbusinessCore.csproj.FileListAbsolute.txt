@@ -10,3 +10,15 @@ C:\Users\PC\Desktop\EBusiness\EbusinessCore\obj\Debug\net6.0\EbusinessCore.dll
 C:\Users\PC\Desktop\EBusiness\EbusinessCore\obj\Debug\net6.0\refint\EbusinessCore.dll
 C:\Users\PC\Desktop\EBusiness\EbusinessCore\obj\Debug\net6.0\EbusinessCore.pdb
 C:\Users\PC\Desktop\EBusiness\EbusinessCore\obj\Debug\net6.0\ref\EbusinessCore.dll
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\bin\Debug\net6.0\EbusinessCore.deps.json
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\bin\Debug\net6.0\EbusinessCore.dll
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\bin\Debug\net6.0\EbusinessCore.pdb
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\EbusinessCore.csproj.AssemblyReference.cache
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\EbusinessCore.GeneratedMSBuildEditorConfig.editorconfig
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\EbusinessCore.AssemblyInfoInputs.cache
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\EbusinessCore.AssemblyInfo.cs
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\EbusinessCore.csproj.CoreCompileInputs.cache
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\EbusinessCore.dll
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\refint\EbusinessCore.dll
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\EbusinessCore.pdb
+E:\EBusiness-Like-Blog-Site-\EbusinessCore\obj\Debug\net6.0\ref\EbusinessCore.dll

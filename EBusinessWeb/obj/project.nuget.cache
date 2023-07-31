@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+nRtV2Yd7tTRudl7PuOphoju8j9IH1/A2xuTw1qUPlzCdOMqaqWP6QLH36RM0srMlXa77JHoA8UOUW2QxUxQWQ==",
+  "dgSpecHash": "0FSH7Tb8SNVHUm1E/6+dZItUp/iRSG40fMZX8pc528sVLUVdmV9KPtAfg1Ob2qmcdf4jjtHG5ERQhdSbt9sb8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\EBusiness\\EBusinessWeb\\EBusinessWeb.csproj",
+  "projectFilePath": "E:\\EBusiness-Like-Blog-Site-\\EBusinessWeb\\EBusinessWeb.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation\\11.6.0\\fluentvalidation.11.6.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.6.0\\fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
