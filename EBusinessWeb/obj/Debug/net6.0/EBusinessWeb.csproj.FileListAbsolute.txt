@@ -824,3 +824,5 @@ E:\EBusiness-Like-Blog-Site-\EBusinessWeb\bin\Debug\net6.0\refs\WindowsBase.dll
 E:\EBusiness-Like-Blog-Site-\EBusinessWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 E:\EBusiness-Like-Blog-Site-\EBusinessWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 E:\EBusiness-Like-Blog-Site-\EBusinessWeb\bin\Debug\net6.0\NToastNotify.dll
+E:\EBusiness-Like-Blog-Site-\EBusinessWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+E:\EBusiness-Like-Blog-Site-\EBusinessWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll

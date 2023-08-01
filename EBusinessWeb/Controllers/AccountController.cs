@@ -46,7 +46,7 @@ namespace EBusinessWeb.Controllers
                 ModelState.AddModelError("Email", "This email already exist.");
                 return View();
             }
-            
+
 
             AppUser appUser = new AppUser
             {
@@ -94,14 +94,14 @@ namespace EBusinessWeb.Controllers
                 return View();
             }
 
-            var result = await signInManager.PasswordSignInAsync(user, signInVM.Password, signInVM.IsParsistance,true);
-            if(!result.Succeeded)
+            var result = await signInManager.PasswordSignInAsync(user, signInVM.Password, signInVM.IsParsistance, true);
+            if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Username or Password wrong. Try again.");
                 return View();
             }
 
-            return RedirectToActionPermanent("Index","Home");
+            return RedirectToActionPermanent("Index", "Home");
         }
 
         [HttpGet]
@@ -141,5 +141,53 @@ namespace EBusinessWeb.Controllers
         //    await roleManager.CreateAsync(new IdentityRole { Name = "User" });
         //    return View();
         //}
+
+        #region SocialMediaOperations
+
+        [HttpGet]
+        public IActionResult GoogleLogin(string returnUrl)
+        {
+            string redirectUrl = Url.Action("SocialMediaResponse", "Account", new { returnUrl = returnUrl });
+            var properties = signInManager.ConfigureExternalAuthenticationProperties("Google", redirectUrl);
+            return new ChallengeResult("Google", properties);
+        }
+
+        public async Task<IActionResult> SocialMediaResponse(string returnUrl)
+        {
+            var loginInfo = await signInManager.GetExternalLoginInfoAsync();
+            if (loginInfo == null)
+                return RedirectToAction(nameof(SignUp));
+            else
+            {
+                var result = await signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider, loginInfo.ProviderKey, true);
+                if (result.Succeeded)
+                    return Redirect(returnUrl);
+                else
+                {
+                    if (loginInfo.Principal.HasClaim(c => c.Type == ClaimTypes.Email))
+                    {
+                        AppUser user = new AppUser()
+                        {
+                            Email = loginInfo.Principal.FindFirstValue(ClaimTypes.Email),
+                            UserName = loginInfo.Principal.FindFirstValue(ClaimTypes.Name)
+                        };
+
+                        var createResult = await userManager.CreateAsync(user);
+                        if(createResult.Succeeded)
+                        {
+                            var identityLogin = await userManager.AddLoginAsync(user, loginInfo);
+                            if(identityLogin.Succeeded)
+                            {
+                                await signInManager.SignInAsync(user, isPersistent: true);
+                                return Redirect(nameof(SignIn));
+                            }
+                        }
+                    }
+                }
+            }
+            return RedirectToAction(nameof(SignUp));
+        }
+
+        #endregion
     }
 }

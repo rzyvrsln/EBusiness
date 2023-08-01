@@ -37,6 +37,8 @@
           "EBusinessData": "1.0.0",
           "EBusinessService": "1.0.0",
           "EBusinessViewModel": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Facebook": "6.0.20",
+          "Microsoft.AspNetCore.Authentication.Google": "6.0.20",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.12",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.14",
           "NToastNotify": "8.0.0",
@@ -989,6 +991,28 @@
           "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http": "2.2.0",
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/6.0.20": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "6.0.20.0",
+            "fileVersion": "6.0.2023.32106"
+          }
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/6.0.20": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "6.0.20.0",
+            "fileVersion": "6.0.2023.32106"
+          }
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/2.2.0": {
@@ -5637,6 +5661,20 @@
       "sha512": "sha512-XlVJzJ5wPOYW+Y0J6Q/LVTEyfS4ssLXmt60T0SPP+D8abVhBTl+cgw2gDHlyKYIkcJg7btMVh383NDkMVqD/fg==",
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/6.0.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0NX87MKm70wSaron3iUqpVeLOdP+xwwXanrY/rt107ytnWH8H6DdcNrWO8SMA+Xzgll016FWdMb3jsvOsG8/1A==",
+      "path": "microsoft.aspnetcore.authentication.facebook/6.0.20",
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.6.0.20.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/6.0.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VL1BrqPT3tEhdko5YHwkBse47yG+XnRYc78AAbZfUEFCxrEAttCD1BcCuFbNk6eNXXP8/rM2QyrlWqit8gTATw==",
+      "path": "microsoft.aspnetcore.authentication.google/6.0.20",
+      "hashPath": "microsoft.aspnetcore.authentication.google.6.0.20.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
       "type": "package",
